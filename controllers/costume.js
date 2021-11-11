@@ -24,3 +24,15 @@ exports.costume_delete = function(req, res) {
 exports.costume_update_put = function(req, res) { 
     res.send('NOT IMPLEMENTED: Costume update PUT' + req.params.id); 
 }; 
+
+// List of all Costumes 
+exports.costume_list = async function(req, res) { 
+    try{ 
+        theCostumes = await Costume.find(); 
+        res.send(theCostumes); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
+}; 
