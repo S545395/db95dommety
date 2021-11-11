@@ -1,4 +1,5 @@
 var express = require('express'); 
+const costume_controlers= require('../controllers/costume'); 
 var router = express.Router(); 
  
 // Require controller modules. 
@@ -19,8 +20,7 @@ router.post('/costumes', costume_controller.costume_create_post);
 router.delete('/costumes/:id', costume_controller.costume_delete); 
  
 // PUT request to update Costume. 
-router.put('/costumes/:id', 
-costume_controller.costume_update_put); 
+router.put('/costumes/:id', costume_controller.costume_update_put); 
  
 // GET request for one Costume. 
 router.get('/costumes/:id', costume_controller.costume_detail); 
@@ -28,4 +28,7 @@ router.get('/costumes/:id', costume_controller.costume_detail);
 // GET request for list of all Costume items. 
 router.get('/costumes', costume_controller.costume_list); 
  
+/* GET costumes */ 
+router.get('/', costume_controlers.costume_view_all_Page ); 
+
 module.exports = router; 

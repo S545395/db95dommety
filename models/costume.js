@@ -5,5 +5,4 @@ const costumeSchema = mongoose.Schema({
  cost: Number 
 }) 
  
-module.exports = mongoose.model("Costume", 
-costumeSchema) 
+module.exports = mongoose.model("Costume", costumeSchema) 
