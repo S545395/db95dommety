@@ -3,4 +3,16 @@ extends layout
 block content
   h1= title
   - let items = results;
-  - let o;
+  p Search Results Costumes 
+  p 
+  div(class="container-fluid")
+        div(class="row")
+            each v,index in items 
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.costume_type}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.size}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.cost}
+  script.                
+        function buy(intemNo)
+        {
+              alert(`you purchased Item ${intemNo+1}`)
+        }
