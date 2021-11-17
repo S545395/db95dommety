@@ -73,6 +73,7 @@ app.use('/jeans', jeansRouter);
 app.use('/addmods', addModsRouter);
 app.use('/selector', selectorRouter);
 app.use('/resource', resourceRouter);
+app.use('/costumes', resourceRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
