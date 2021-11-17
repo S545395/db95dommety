@@ -9,5 +9,16 @@ a {
 
 .costumeAttr { 
   background-color: aquamarine; 
-  width: 120px; 
+  width: 500px; 
+  font: 300;
+  height: 50px;
+  font-size: 20px;
 } 
+
+h1{
+  background-color: yellow;
+  margin-left: -10px;
+  text-shadow: springgreen;
+  font: bold;
+  width: 500px;
+}

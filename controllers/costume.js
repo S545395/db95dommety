@@ -145,8 +145,7 @@ exports.costume_delete_Page = async function(req, res) {
     console.log("Delete view for id "  + req.query.id) 
     try{ 
         result = await Costume.findById(req.query.id) 
-        res.render('costumedelete', { title: 'Costume Delete', toShow: 
-result }); 
+        res.render('costumedelete', { title: 'Costume Delete', toShow:result }); 
     } 
     catch(err){ 
         res.status(500) 
