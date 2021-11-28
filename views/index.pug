@@ -1,18 +1,12 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
-  p Added line to check to see if this is reflecting or not
-  button(type='button', class="btn btn-secondary", onClick='update()') Press Me
-  br
-  br
-  div(id="target") Display 
-   script.
-    var client_count=0
-    function update(){
-     client_count++;
-     document.getElementById("target").innerHTML=`value now ${client_count}`
-     }
-  br
-  a(href="jeans") link to jeans
+extends layout 
+ 
+block content 
+  if (!user) 
+    a(href="/login") Login 
+    br 
+    a(href="/register") Register 
+  if (user) 
+    p You are currently logged in as #{user.username} 
+    a(href="/costumes") Take me to costumes 
+    br 
+    a(href="/logout") Logout 
