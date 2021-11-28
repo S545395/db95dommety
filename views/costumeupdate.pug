@@ -10,7 +10,7 @@ block content
     - let costume_type = toShow.costume_type 
     - let costumecost = toShow.cost 
     - let costumesize = toShow.size 
-    
+
     div.row(class='mb-2') 
       div.mr-1 ID is 
       div #{costumeid} 
@@ -25,8 +25,8 @@ block content
       div.form-group 
           label.costumeAttr(for='cost') Costume cost 
           input#cost(type='number', name='cost', value= costumecost ) 
-      input(type="submit") 
-  
+      input(type="submit")
+
     script. 
       document.forms['CostumeForm'].addEventListener('submit', (event) => { 
         event.preventDefault(); 
@@ -44,3 +44,4 @@ block content
           alert("Update failed " + error ) 
         }); 
       }); 
+       

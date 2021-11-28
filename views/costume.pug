@@ -3,6 +3,13 @@ extends layout
 block content
   h1= title
   - let items = results;
+  div(class="container-fluid") 
+  div(class="row m-1") 
+    each item in items  
+      - let destination = `dispatch(\"/costumes/update?id=${item._id}\")` 
+      div(class="row-sm-2", class="m-1") Item #{item.costume_type}(#{item.size}) is #{item.cost} 
+        button.btn( class="btn-primary ml-1", onclick= destination) Update
+
   p Search Results Costumes 
   p 
   div(class="container-fluid")
@@ -11,6 +18,10 @@ block content
                 div(class="col-sm-2" onclick=`buy(${index})`) #{v.costume_type}
                 div(class="col-sm-2" onclick=`buy(${index})`) #{v.size}
                 div(class="col-sm-2" onclick=`buy(${index})`) #{v.cost}
+  script. 
+      function dispatch(path){ 
+        window.location.href=path 
+      } 
   script.                
         function buy(intemNo)
         {

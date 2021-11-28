@@ -29,7 +29,7 @@ router.get('/costumes/:id', costume_controller.costume_detail);
 router.get('/costumes', costume_controller.costume_list); 
  
 /* GET costumes */ 
-router.get('/', costume_controlers.costume_view_all_Page ); 
+router.get('/costume', costume_controlers.costume_view_all_Page ); 
 
 /* GET detail costume page */ 
 router.get('/detail', costume_controlers.costume_view_one_Page); 

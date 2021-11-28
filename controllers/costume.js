@@ -90,7 +90,7 @@ exports.costume_list = async function(req, res) {
 exports.costume_view_all_Page = async function(req, res) { 
     try{ 
         theCostumes = await Costume.find(); 
-        res.render('costumes', { title: 'Costume Search Results', results: theCostumes }); 
+        res.render('costume', { title: 'Costume Search Results', results: theCostumes }); 
     } 
     catch(err){ 
         res.status(500); 
