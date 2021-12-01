@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var passport = require('passport'); 
+const expressValidator = require('express-validator')
 var LocalStrategy = require('passport-local').Strategy; 
 var Costume = require("./models/costume"); 
 
@@ -60,6 +61,7 @@ var resourceRouter = require('./routes/resource');
 
 var app = express();
 
+//app.use(expressValidator())
 
 passport.use(new LocalStrategy( 
   function(username, password, done) { 

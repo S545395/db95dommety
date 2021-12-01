@@ -1,5 +1,11 @@
 var Costume = require('../models/costume'); 
- 
+const { check, validationResult } = require('express-validator/check');
+
+
+validationBodyRules = [
+    check('costume_type', 'not working').not().isEmpty()
+];
+
 // List of all Costumes 
 exports.costume_list = function(req, res) { 
     res.send('NOT IMPLEMENTED: Costume list'); 
@@ -117,6 +123,12 @@ exports.costume_view_all_Page = async function(req, res) {
 // Does not need to be async 
 exports.costume_create_Page =  function(req, res) { 
     console.log("create view") 
+    const errors = validationResult(req); 
+    if (!errors.isEmpty()) {
+        res.status(422).json({ errors: errors.array() });
+        return;
+      }
+
     try{ 
         res.render('costumecreate', { title: 'Costume Create'}); 
     } 
@@ -152,3 +164,5 @@ exports.costume_delete_Page = async function(req, res) {
         res.send(`{'error': '${err}'}`); 
     } 
 }; 
+
+

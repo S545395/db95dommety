@@ -19,7 +19,7 @@ const secured = (req, res, next) => {
 /// API ROUTE /// 
  
 // GET resources base. 
-router.get('/', costume_controller.costume_list); 
+router.get('/', costume_controlers.costume_view_all_Page ); 
  
 /// COSTUME ROUTES /// 
  

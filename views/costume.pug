@@ -6,9 +6,14 @@ block content
   div(class="container-fluid") 
   div(class="row m-1") 
     each item in items  
-      - let destination = `dispatch(\"/costumes/update?id=${item._id}\")` 
-      div(class="row-sm-2", class="m-1") Item #{item.costume_type}(#{item.size}) is #{item.cost} 
-        button.btn( class="btn-primary ml-1", onclick= destination) Update
+      - let destination = `dispatch(\"/costumes/update?id=${item._id}\")`
+      - let detail = `dispatch(\"/costumes/detail/?id=${item._id}")`
+      - let deleteItem = `dispatch(\"/costumes/delete/?id=${item._id}")` 
+
+      div(class="row-sm-2", class="m-1") Item #{item.costume_type}(#{item.size}) is #{item.cost}
+        button.btn( class="btn-primary ml-1", onclick= destination, style="margin-left: 30px;") Update
+        button.btn( class="btn-success", onclick= detail, style="margin-left: 30px;") Details
+        button.btn( class="btn-danger", onclick= deleteItem, style="margin-left: 30px;") Delete
 
   p Search Results Costumes 
   p 
